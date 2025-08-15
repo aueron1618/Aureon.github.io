@@ -474,6 +474,407 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* 新增感谢名单样式 */
+        .acknowledgement {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid #ffcc00;
+            animation: pulse 4s infinite;
+        }
+        
+        .acknowledgement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(139, 0, 0, 0.1), rgba(178, 34, 34, 0.15));
+            z-index: -1;
+        }
+        
+        .acknowledgement h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ffd7d7;
+            display: flex;
+            align-items: center;
+        }
+        
+        .acknowledgement h3 i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .contributors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .contributor {
+            display: inline-block;
+            background: rgba(255, 204, 0, 0.15);
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            font-weight: bold;
+            animation: float 3s infinite ease-in-out;
+            animation-delay: calc(0.1s * var(--i));
+        }
+        
+        .contributor:nth-child(1) { --i: 1; }
+        .contributor:nth-child(2) { --i: 2; }
+        .contributor:nth-child(3) { --i: 3; }
+        
+        .appreciation {
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 0.9rem;
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 新增动画 */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .logo i {
+                font-size: 50px;
+            }
+            
+            .quote {
+                font-size: 1.3rem;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .quote {
+                font-size: 1.1rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 装饰元素 -->
+    <div class="decoration circle"></div>
+    <div class="decoration triangle"></div>
+    <div class="decoration square"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="logo-text">AUREON</div>
+            </div>
+            <h1>Aureon 公益站</h1>
+            <p class="subtitle">致力于提供免费的AI技术服务</p>
+            
+            <div class="quote">
+                为人民服务
+                <span class="author">—— 毛泽东</span>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2><i class="fas fa-book"></i> 本站准则</h2>
+                <ul class="guidelines">
+                    <li><strong>使用限制：</strong>严禁商用，禁止将本站服务用于任何盈利性项目、商业软件或收费服务</li>
+                    <li><strong>禁止事项：</strong>严禁以任何形式倒卖、私下交易或广泛传播 API 密钥</li>
+                    <li><strong>合理使用：</strong>请勿滥用服务，共同维护公益资源稳定运行</li>
+                    <li><strong>关注更新：</strong>请关注帖子通知获取最新信息和服务变更</li>
+                    <li><strong>云酒馆使用：</strong>使用托管云酒馆服务请遵循其社区准则</li>
+                </ul>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <h4>社区共建</h4>
+                        <p>共同维护良好环境</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>合规使用</h4>
+                        <p>遵守使用规范</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-bullhorn"></i> 其他</h2>
+                
+                <a href="https://discord.com/channels/1134557553011998840/1404421493714321428" target="_blank" class="service-link discord">
+                    <div class="service-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Discord 帖子</h3>
+                        <p>获取最新更新、参与讨论</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+                <a href="https://tavern.52099966.xyz" target="_blank" class="service-link tavern">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>公益云酒馆</h3>
+                        <p>直接访问地址注册登录即可使用集成的功能</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+                <div class="connection-info">
+                    <p><span class="highlight">公益站 API 地址：</span> https://gemini.52099966.xyz/v1</p>
+                    <p><span class="highlight">配置指南：</span> </p>
+                    <ul>
+                         <li>在酒馆设置中选择 OpenAI 兼容模式</li>
+                         <li>确保模式设置为聊天补全</li>
+                         <li>在 API 地址栏填入上方提供的地址</li>
+                         <li>在密钥栏填入您获取的有效密钥</li>
+                    </ul>
+                </div>
+                
+                <!-- 新增的感谢名单部分 -->
+                <div class="acknowledgement">
+                    <h3><i class="fas fa-heart"></i> 特别感谢以下贡献者</h3>
+                    <div class="contributors">
+                        <span class="contributor">@hype_____</span>
+                        <span class="contributor">@开发者A</span>
+                        <span class="contributor">@技术支持B</span>
+                    </div>
+                    <p class="appreciation">感谢所有为公益项目做出贡献的伙伴们！</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>开放 · 共享 · 互助 · 进步</p>
+            <p>为人民服务是我们的宗旨</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-qq"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 卡片动画
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 300 + index * 200);
+            });
+            
+            // 背景装饰动画
+            const decorations = document.querySelectorAll('.decoration');
+            decorations.forEach((dec, index) => {
+                setTimeout(() => {
+                    dec.style.animation = `float ${6 + index}s infinite ease-in-out`;
+                }, 500);
+            });
+            
+            // 添加动态样式
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(5deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>lex-shrink: 0;
+            border-radius: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .discord .service-icon {
+            background: #5865F2;
+        }
+        
+        .tavern .service-icon {
+            background: #ff6b6b;
+        }
+        
+        .service-info {
+            flex-grow: 1;
+        }
+        
+        .service-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .service-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .connection-info {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .connection-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #ff6b6b;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .info-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ffd7d7;
+        }
+        
+        .info-item h4 {
+            margin-bottom: 5px;
+            color: #ffd7d7;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff6b6b, transparent);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
