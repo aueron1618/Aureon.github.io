@@ -519,6 +519,50 @@
                 font-size: 1rem;
             }
         }
+
+        .acknowledgement {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid #ffcc00;
+        }
+        
+        .acknowledgement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(139, 0, 0, 0.1), rgba(178, 34, 34, 0.15));
+            z-index: -1;
+        }
+        
+        .acknowledgement h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ffd7d7;
+            display: flex;
+            align-items: center;
+        }
+        
+        .acknowledgement h3 i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .contributor {
+            display: inline-block;
+            background: rgba(255, 204, 0, 0.15);
+            padding: 8px 15px;
+            border-radius: 8px;
+            margin: 5px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -604,6 +648,18 @@
                          <li>在密钥栏填入您获取的有效密钥</li>
                     </ul>
                 </div>
+                
+                <!-- 新增的感谢名单部分 -->
+                <div class="acknowledgement">
+                    <h3><i class="fas fa-heart"></i> 特别感谢以下贡献者</h3>
+                    <div>
+                        <span class="contributor">@hype_____</span>
+                        <!-- 此处可添加更多贡献者 -->
+                    </div>
+                    <p style="margin-top: 15px; opacity: 0.9; font-size: 0.9rem;">
+                        感谢所有为公益项目做出贡献的伙伴们！
+                    </p>
+                </div>
             </div>
         </div>
         
@@ -651,4 +707,4 @@
         });
     </script>
 </body>
-</html>
+    </html>
