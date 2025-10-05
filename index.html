@@ -789,7 +789,10 @@
                 <div class="logo-text">AUREON</div>
             </div>
             <h1>Aureon 公益站</h1>
-            <p class="subtitle">致力于提供免费的AI技术服务</p>
+                        <!-- 添加捐赠按钮到标题区域 -->
+            <button class="donation-btn" id="show-donation">
+                <i class="fas fa-heart"></i> 支持公益站
+            </button>
         </header>
         
         <div class="content">
@@ -878,27 +881,23 @@
         <div class="modal-content">
             <button class="modal-close" id="close-modal">&times;</button>
             <div class="modal-header">
-                <h2><i class="fas fa-heart"></i> 站主邀请您捐赠</h2>
+                <h2><i class="fas fa-heart"></i> 站长邀请您捐赠</h2>
             </div>
             <div class="modal-body">
                 <p class="donation-text">
-                    公益站的持续运营、服务器的日常维护与性能升级，离不开大家的慷慨捐赠。您的每一份支持，都是"人民AI"事业前进的重要力量！
+                    公益站的持续运营、日常维护与服务器性能升级，离不开大家的慷慨捐赠
                 </p>
                 
                 <!-- 显示二维码的按钮 -->
                 <button class="donation-btn" id="show-qr-btn">
-                    <i class="fab fa-weixin"></i> 显示微信捐赠二维码
+                    <i class="fab fa-weixin"></i> 微信支持
                 </button>
                 
                 <!-- 二维码区域 - 初始隐藏 -->
                 <div class="wechat-qr" id="wechat-qr">
-                    <img src="https://i.postimg.cc/7GV6V5t9/donation-qr.jpg" alt="微信捐赠二维码">
+                    <img src="https://i.postimg.cc/7GV6V5t9/donation-qr.jpg" alt="微信支持">
                 </div>
-                
-                <p id="qr-instruction" style="display: none; margin-top: 15px; font-size: 1rem;">请使用微信扫描二维码进行捐赠</p>
-            </div>
-            <div class="modal-footer">
-                <p>公益站将根据使用情况调整费率，请留意使用额度。</p>
+               
             </div>
         </div>
     </div>
